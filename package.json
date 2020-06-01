@@ -1,0 +1,26 @@
+{
+  "name": "fancy-weather",
+  "version": "1.0.0",
+  "description": "Fancy weather",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "weather",
+    "map",
+    "geolocation"
+  ],
+  "author": "Evgheni riggedman22@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  },
+  "dependencies": {
+    "bootstrap": "^4.5.0",
+    "jquery": "^3.5.1",
+    "mapbox-gl": "^1.10.1",
+    "popper.js": "^1.16.1"
+  }
+}

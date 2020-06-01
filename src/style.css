@@ -1,0 +1,17 @@
+body{
+    background-image: url("./assets/City.jpg");
+}
+
+#map{
+    float: right;
+    margin-right: 25px;
+}
+.mapboxgl-canvas{
+    border-radius:25px;
+}
+.controls{
+    display: flex;
+}
+.search{
+    width: 250px
+}

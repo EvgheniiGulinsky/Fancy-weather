@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />
+    <link href='/src/style.css' rel='stylesheet' />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <title>Fancy weather</title>
+</head>
+<body>
+    <div class="controls">
+        <input type="button" value="Hello">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Language
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">EN</a>
+              <a class="dropdown-item" href="#">RU</a>
+            </div>
+        </div>
+        <div class="degrees">
+            <input type="button" class ="degrees_calvin" value="C">
+            <input type="button" class ="degrees_farenheit"value="F">
+        </div>
+        <div class="search">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control input" placeholder="Search by city or ZIP" aria-label="Search by city or ZIP" aria-describedby="button-addon2">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div id="data">
+        <div id="location"></div>
+        <div id="date"></div>
+        <div id="temperature"></div>
+        <div id="overcast"></div>
+        <div id="forecast"></div>
+    </div>
+    <div id='map' style='width: 400px; height: 300px;'></div>
+    <div id="coords">
+        <div id="longtitude"></div>
+        <div id="latitude"></div>
+    </div>
+    <script src="/dist/bundle.js"></script>
+</body>
+</html>
