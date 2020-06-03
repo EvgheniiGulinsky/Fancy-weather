@@ -28,35 +28,40 @@ document.getElementById('button-addon2').addEventListener('click', async functio
         center: [coords[0], coords[1]],
         essential: true 
         });
-    createWeather(data)
     getcurrentWeather(coords[0] , coords[1])
 })
 });
 
 async function getcurrentWeather(lat,lon){
-    let url = `http://api.weatherapi.com/v1/forecast.json?key=a4ba5ff5d7e34884bc9173803203105&q=${lat},${lon}&days=3` 
+    let url = `https://api.weatherapi.com/v1/forecast.json?key=a4ba5ff5d7e34884bc9173803203105&q=${lat},${lon}&days=3` 
     let response = await fetch(url) 
     let data = await response.json()
     console.log(data)
-    let condition = data.current.condition
-    let feelslike_c = data.current.feelslike_c
-    let feelslike_f = data.current.feelslike_f
-    let temp_c = data.current.temp_c
-    let temp_f = data.current.temp_f
     createWeather(data)
 }
 
 function createWeather(data){
-    document.querySelector('.weatherOnToday').innerHTML = ''
+    document.querySelector('#weather').innerHTML = ''
     let currentWeather = document.createElement('div') 
     let nextDaysWether = document.createElement('div') 
     currentWeather.classList.add('currentWeather') 
     nextDaysWether.classList.add('nextDaysWether') 
-    currentWeather.innerHTML = ' '
-    currentWeather.innerHTML = `<p class='avg_temp_c'>${data.current.temp_c}°С</p>
-    <p>${data.current.feelslike_c} </p>
-    <p>${data.current.condition.text}</p>
-    <img src="${data.current.condition.icon}" alt="">`
-    document.querySelector('.weatherOnToday').appendChild(currentWeather)
+    currentWeather.innerHTML = `<p class='avg_temp_c'>Temperature: ${data.current.temp_c}°С</p>
+    <p>Feels like: ${data.current.feelslike_c} </p>
+    <p>${data.current.condition.text} <img src="${data.current.condition.icon}" alt=""> </p>`
+    document.querySelector('#weather').appendChild(currentWeather)
 }
 
+
+
+document.querySelector('.img-change').addEventListener('click', changebackground)
+
+async function changebackground() {
+    const url = 'https://api.unsplash.com/photos/random?orientation=landscape&per_page=1&query=nature&client_id=HfnaaV0DUIzeODJBl5XcxAcW2kesfr5HwKt8IJqItmQ'
+    let response = await fetch(url)
+    let data = await  response.json()
+    console.log(data.urls.full)
+    document.body.style.backgroundImage  = `url("${data.urls.full}")`
+}
+
+$('.calvin').button('toggle')

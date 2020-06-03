@@ -1,10 +1,6 @@
 body{
     background-image: url("./assets/City.jpg");
-}
-
-#map{
-    float: right;
-    margin-right: 25px;
+    font: 18px;
 }
 .mapboxgl-canvas{
     border-radius:25px;
@@ -14,4 +10,30 @@ body{
 }
 .search{
     width: 250px
+}
+.map-container{
+    margin-left: auto;
+}
+.container{
+    display: flex;
+    padding: 50px;
+    font-size: 20px;
+    color: black;
+}
+#weather{
+    align-self: center;
+}
+.controls{
+    margin: 10px;
+}
+
+.search{
+    margin-left: auto;
+}
+.btn{
+    margin-right: 5px;
+}
+
+.controls :first-child{
+height: 38px;
 }
